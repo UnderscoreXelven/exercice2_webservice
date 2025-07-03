@@ -28,10 +28,10 @@ public class OrderService {
         OrderResponseDto orderResponseDto = new OrderResponseDto();
         orderResponseDto.setId(order.getId());
         orderResponseDto.setDescription(order.getDescription());
-        RestClient<Product> productRestClient = new RestClient<>("http://PRODUCT/product/42", restTemplate);
+        RestClient<Product> productRestClient = new RestClient<>("http://PRODUCT/product/1", restTemplate);
         Product product = productRestClient.get(Product.class);
         orderResponseDto.setProduct(product);
-        RestClient<Customer> customerRestClient = new RestClient<>("http://CUSTOMER/customer/2", restTemplate);
+        RestClient<Customer> customerRestClient = new RestClient<>("http://CUSTOMER/customer/1", restTemplate);
         Customer customer = customerRestClient.get(Customer.class);
         orderResponseDto.setCustomer(customer);
         return orderResponseDto;
